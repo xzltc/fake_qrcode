@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title>
+        详情
+    </title>
+    <link href="../static/index/css/mui.css" rel="stylesheet"/>
+    <link href="../static/index/css/css.css" rel="stylesheet"/>
+    <link href="../static/index/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../static/index/css/mui.min.css"/>
+    <link href="../static/index/css/my.css" rel="stylesheet"/>
+    <script src="../static/index/js/jquery-1.11.1.min.js"></script>
+    <script src="../static/index/js/jquery-barcode.js"></script>
+    <style type="text/css">
+        .l_wd1 {
+            height: 140px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            border: none;
+            list-style: none;
+            font-family: 微软雅黑;
+        }
+
+        body {
+            background: #ffffff;
+        }
+
+        #smsb {
+            text-align: center;
+            margin-top: 55px;
+        }
+
+        .smjg {
+            font-size: 40px;
+            color: red;
+            margin-bottom: 40px;
+        }
+
+        .smsb {
+            font-size: 40px;
+            color: blue;
+            margin-bottom: 40px;
+        }
+
+        .smqk {
+            text-align: left;
+            margin-left: 10%;
+            font-size: 16px;
+        }
+
+        .sb {
+            text-align: center;
+            margin-right: 10%;
+        }
+
+        #name {
+            background: #4cd964;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            border-radius: 60px;
+            text-align: center;
+            overflow: hidden;
+            white-space: inherit;
+        }
+
+        #jlfw {
+            text-align: center;
+            color: #2a2a2a;
+        }
+    </style>
+
+</head>
+
+<body>
+<div>
+    <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"
+           value="/wEPDwUJNjc2MDU5OTkxD2QWAgIDD2QWEAIBDxYCHglpbm5lcmh0bWwFBuiMg+aWh2QCAw8WAh8ABQbojIPmlodkAgUPFgIfAAUMMjAyMDI1MjAxMDczZAIHDxYCHwAFNuWtpueUny8zMTMt5pWw5a2m5LiO6K6h566X5py656eR5a2m5a2m6ZmiL+eUteWtkOS/oeaBr2QCCQ8WAh8ABTbkurrlkZjnsbvliKvvvJrlrabnlJ8gIDI0Mi3lhajml6XliLbkuJPkuJrlrabkvY3noZXlo6tkAgsPFgIfAAUb6L+U5qCh54q25oCB77ya5YWB6K646L+U5qChZAIPDxYCHwAFpwE8cCBjbGFzcz0nc21qZyc+5omr56CB5oiQ5YqfPC9wPjxwIGNsYXNzPSdzbXFrJz7mgqjlvZPliY3miavnoIHml7bpl7TvvJoyMDIxLTAxLTEwIDExOjI1OjQ2PC9wPjxwICBjbGFzcz0nc21xayc+5oKo5b2T5YmN5omr56CB5L2N572u77ya5qCh6KW/5Y2X6ZeoX+i/m+agoemAmumBk18xPC9wPmQCEQ8WAh8ABRrnprvmtYvot53ngrnot53nprvvvJo3Oeexs2RkqdTUZrwW0ZRkgiP4XpcUzOGM3Zl8y9Rt0EjMyz+H5bY="
+    />
+</div>
+
+<div>
+
+    <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="A9B280A3"/>
+</div>
+<div id="mingpian">
+    <div class="l_wd1" id="usertx">
+        <div class="w_ld1">
+            <p id="name">{{s.name}}</p>
+        </div>
+        <div class="w_dl2">
+            <p id="name_t" style="font-size: 16px;">{{s.name}}</p>
+            <p id="code" style="margin-top:-5px;font-weight: inherit;font-size: 13px;margin-bottom:0px;">
+                {{ s.id }}</p>
+            <p id="department">学生/313-数学与计算机科学学院/电子信息</p>
+        </div>
+        <p id="typepersonnel" style="position: absolute;margin-top: 95px; margin-left: 10%">人员类别：学生 242-全日制专业学位硕士
+        </p>
+        <p id="school" style="position: absolute;margin-top: 115px; margin-left: 10%;">返校状态：允许返校</p>
+    </div>
+</div>
+<div class="divthere">
+    <div id="text"
+         style="color: #392a0c;font-size: 20px;line-height: 30px;text-align: center;padding-top: 15px;background: #fff;">
+    </div>
+    <div id="txm" style="background:#fff;overflow: hidden;text-align:center">
+        <div style="text-align: center;font-size:16px;padding:10px 0">浙江师范大学返校码</div>
+        <div id="bcTarget" class="barcodeImg" style="margin: auto;"></div>
+    </div>
+</div>
+<div id="smsb">
+    <p class='smjg'>扫码成功</p>
+    <!--        <p class='smqk'>您当前扫码时间：2021-01-10 11:25:46</p>-->
+    <p class='smqk'></p>
+    <p class='smqk'>您当前扫码位置：校西南门_进校通道_1</p>
+</div>
+<!--<div id="jlfw">离测距点距离：79米</div>-->
+<div id="jlfw"></div>
+
+<script>
+
+    let code = String(Number($("#code").text()));
+    console.log(code)
+    $("#bcTarget").empty().barcode(code, "code128", {
+        barWidth: 2,
+        barHeight: 50,
+        showHRI: false
+    });
+
+
+    Date.prototype.Format = function (fmt) { //author: meizz
+        var o = {
+            "M+": this.getMonth() + 1, //月份
+            "d+": this.getDate(), //日
+            "H+": this.getHours(), //小时
+            "m+": this.getMinutes(), //分
+            "s+": this.getSeconds(), //秒
+            "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+            "S": this.getMilliseconds() //毫秒
+        };
+        if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        for (var k in o)
+            if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+        return fmt;
+    }
+
+    let now = new Date().Format("yyyy-MM-dd HH:mm:ss");
+    let timeNode = document.getElementsByClassName('smqk')[0];
+    timeNode.innerText = '您当前扫码时间：' + now;
+
+    let position = document.getElementById('jlfw');
+    let dist = Math.floor(Math.random() * (100 - 5)) + 5;
+    position.innerText = '离测距点距离：' + String(dist) + '米';
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Fake Qrcode</title>
+    <style>
+        input {
+            background: none;
+            outline: none;
+            border: none;
+        }
+
+        .box {
+            display: inline-block;
+            width: 90%;
+            height: 8vh;
+            border-radius: 19px;
+            background: #ebebeb;
+            box-shadow: inset 34px 34px 90px #dbdbdb,
+            inset -34px -34px 90px #fbfbfb;
+        }
+
+    </style>
+</head>
+<link rel="stylesheet" href="../static/index/css/style.css">
+<script src="../static/index/js/jquery-1.11.1.min.js"></script>
+
+<body style="font-family:'lucida grande', 'lucida sans unicode', 'lucida', 'helvetica', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'sans-serif';">
+
+<!--<form method="post" action="submit">-->
+<!--    <div>-->
+<!--        <span>学号 ：</span>-->
+<!--        <input class="box" type="text" name="studentID" required="" placeholder="请输入学号" style="">-->
+<!--    </div>-->
+<!--    <div>-->
+<!--        <span>姓名 ：</span>-->
+<!--        <input class="box" type="text" name="studentName" required="" placeholder="请输入姓名" style="">-->
+<!--    </div>-->
+<!--    <input type="submit">-->
+<!--</form>-->
+
+<section>
+    <h1 style="text-align: center">Fake Qrcode</h1>
+
+    <form id="basic-form" method="post" action="submit">
+        <div class="form-group">
+            <input type="text" id="basic-form-first-name" placeholder="学号" name="studentID" >
+            <label for="basic-form-first-name">学号</label>
+        </div>
+        <div class="form-group">
+            <input type="text" id="basic-form-last-name" placeholder="姓名" name="studentName">
+            <label for="basic-form-last-name">姓名</label>
+        </div>
+        <button id="basic-form-submit" type="submit">发送信息</button>
+    </form>
+</section>
+</body>
+</html>

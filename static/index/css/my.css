@@ -1,0 +1,85 @@
+.bdxq1 p {
+    margin-bottom: 0px;
+}
+
+.dd_l1 p {
+    margin-bottom: 0px;
+}
+
+.l_wd1 {
+        width: 100%;
+    overflow: hidden;
+    background-color: #159af5;
+    margin-top: 0;
+   height: 120px;
+}
+
+.w_dl2 {
+    width: 60%;
+    float: left;
+    margin-top: 7%;
+    margin-left: 10%;
+}
+
+.l_wd1 p {
+    color: #f7f7f7;
+        font-family: 方正兰亭黑简体;
+}
+
+.w_ld1 {
+        margin-right: 5%;
+    float: right;
+    margin-top: 5%;
+}
+
+    .w_ld1 img {
+        width: 60px;
+        border-radius: 150px;
+        border: 1px rgba(0,0,0,.075) solid;
+    }
+
+.w_dl3 {
+    float: right;
+    margin-top: 7%;
+}
+
+p {
+    color: #2a2a2a;
+}
+
+.w_dl3 span {
+    color: white;
+}
+
+.mui-table-view-cell img {
+    width: 16px;
+    float: left;
+    margin-top: 3px;
+}
+
+.mui-table-view:first-child {
+    margin-top: 0px;
+}
+
+.mui-table-view {
+    margin-top: 20px;
+}
+
+.bg-white {
+    background-color: white !important;
+}
+
+.bg-mui {
+    background-color: #efeff4 !important;
+}
+
+.mui-content {
+    height: 100%;
+}
+
+.function-list {
+    padding: 20px 0;
+}
+.mui-table-view-cell p{
+        margin-left: 8%;
+}
