@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 
 <head>
     <meta charset="UTF-8">
@@ -25,6 +25,10 @@
             inset -34px -34px 90px #fbfbfb;
         }
 
+        .radio {
+            display: inline-block;
+        }
+
     </style>
 </head>
 <link rel="stylesheet" href="../static/index/css/style.css">
@@ -32,31 +36,29 @@
 
 <body style="font-family:'lucida grande', 'lucida sans unicode', 'lucida', 'helvetica', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'sans-serif';">
 
-<!--<form method="post" action="submit">-->
-<!--    <div>-->
-<!--        <span>学号 ：</span>-->
-<!--        <input class="box" type="text" name="studentID" required="" placeholder="请输入学号" style="">-->
-<!--    </div>-->
-<!--    <div>-->
-<!--        <span>姓名 ：</span>-->
-<!--        <input class="box" type="text" name="studentName" required="" placeholder="请输入姓名" style="">-->
-<!--    </div>-->
-<!--    <input type="submit">-->
-<!--</form>-->
 
 <section>
     <h1 style="text-align: center">Fake Qrcode</h1>
 
     <form id="basic-form" method="post" action="submit">
         <div class="form-group">
-            <input type="text" id="basic-form-first-name" placeholder="学号" name="studentID" >
+            <input type="text" id="basic-form-first-name" placeholder="学号" name="studentID">
             <label for="basic-form-first-name">学号</label>
         </div>
         <div class="form-group">
             <input type="text" id="basic-form-last-name" placeholder="姓名" name="studentName">
             <label for="basic-form-last-name">姓名</label>
         </div>
-        <button id="basic-form-submit" type="submit">发送信息</button>
+        <div class="form-group" style="display:block;text-align: center">
+            <input class="radio" type="radio" name="door" value="西南门" checked/>
+            <span class="radio">西南门</span>
+            <input class="radio" type="radio" name="door" value="东南门"/>
+            <span class="radio">东南门</span>
+        </div>
+        <div class="form-group">
+            <button id="basic-form-submit" type="submit">发送信息</button>
+        </div>
+
     </form>
 </section>
 </body>

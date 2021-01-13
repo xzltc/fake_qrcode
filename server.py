@@ -23,13 +23,14 @@ def raw():
 def submit():
     s_id = request.form.get('studentID')
     s_name = request.form.get('studentName')
-    print(s_name, s_id)
+    door = request.form.get('door')
+    print(s_name, s_id, door)
 
     filehandle = open("log.txt", "a")
-    filehandle.write('ID:{} --- Name: {} \n'.format(s_id, s_name))
+    filehandle.write('ID:{} --- Name: {} --- Door: {} \n'.format(s_id, s_name, door))
     filehandle.close()
 
-    student = {'id': s_id, 'name': s_name}
+    student = {'id': s_id, 'name': s_name, 'door': door}
     return render_template('index.html', s=student)
 
 
