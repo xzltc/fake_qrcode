@@ -1,1 +1,1 @@
-# ZJNU fake_qrcode
+# ZJNU Fake Qrcode
