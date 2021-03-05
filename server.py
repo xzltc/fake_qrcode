@@ -3,6 +3,7 @@
 # @Author: XZL
 # @File : server.py
 # @Software: PyCharm
+import datetime
 import os
 
 from flask import Flask, render_template, request, jsonify, redirect, url_for, session
@@ -26,14 +27,16 @@ def submit():
     s_name = request.form.get('studentName')
     door = request.form.get('door')
     code_type = request.form.get('codeType')
+    time = datetime.datetime.now().strftime('%m-%d %H:%M')
     print(s_name, s_id, door)
-    # 日志记录
-    filehandle = open("log.txt", "a")
-    filehandle.write('ID:{} --- Name: {} --- Door: {} \n'.format(s_id, s_name, door))
-    filehandle.close()
+    if s_id and s_name is not None:
+        # 日志记录
+        filehandle = open("log.txt", "a")
+        filehandle.write('ID:{} -- Name: {} -- Door: {} T: {}\n'.format(s_id, s_name, door, time))
+        filehandle.close()
     # 模板渲染
     student = {'id': s_id, 'name': s_name, 'door': door, 'codeType': code_type}
-    return render_template('index.html', s=student)
+    return render_template('index_v2.html', s=student)
 
 
 if __name__ == '__main__':

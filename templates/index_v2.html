@@ -1,10 +1,180 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title>
+        详情
+    </title>
+    <link href="../static/index/css/mui.css" rel="stylesheet"/>
+    <link href="../static/index/css/css.css" rel="stylesheet"/>
+    <link href="../static/index/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../static/index/css/mui.min.css"/>
+    <link href="../static/index/css/my.css" rel="stylesheet"/>
+    <script src="../static/index/js/jquery-1.11.1.min.js"></script>
+    <script src="../static/index/js/jquery-barcode.js"></script>
+    <style type="text/css">
+        .l_wd1 {
+            /* height:140px;*/
+            display: table;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            border: none;
+            list-style: none;
+            font-family: 微软雅黑;
+        }
+
+        body {
+            background: #ffffff;
+        }
+
+        #smsb {
+            text-align: center;
+            margin-top: 55px;
+        }
+
+        .smjg {
+            font-size: 40px;
+            margin-bottom: 40px;
+        }
+
+        .smsb {
+            font-size: 40px;
+            color: blue;
+            margin-bottom: 40px;
+        }
+
+        .smqk {
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .sb {
+            text-align: center;
+            margin-right: 10%;
+        }
+
+        #name {
+            background: #4cd964;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            border-radius: 60px;
+            text-align: center;
+            overflow: hidden;
+            white-space: inherit;
+        }
+
+        #jlfw {
+            text-align: center;
+            color: #2a2a2a;
+        }
+
+        .w_ld1 {
+            margin-right: 0;
+            margin-left: 0px;
+            position: absolute;
+            right: 20px;
+        }
+
+        .w_dl2 {
+            /* position: absolute;*/
+            width: auto;
+            float: left;
+            margin-top: 7%;
+            margin-left: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        p {
+            padding: 0;
+            margin: 0px;
+        }
+    </style>
+
 </head>
 <body>
-$END$
+<form name="form1" method="post"
+      action="./handle.aspx?Jcode=bwc-0029&amp;TimeCode=BDT&amp;position=119.634202%2c29.130869&amp;SBEI=Mozilla%2f5.0+(Linux%3b+Android+9%3b+MI+6+Build%2fPKQ1.190118.001%3b+wv)+AppleWebKit%2f537.36+(KHTML%2c+like+Gecko)+Version%2f4.0+Chrome%2f77.0.3865.120+MQQBrowser%2f6.2+TBS%2f045511+Mobile+Safari%2f537.36+MMWEBID%2f3016+MicroMessenger%2f7.0.20.1781(0x2700143F)+Process%2ftools+WeChat%2farm64"
+      id="form1">
+    <div>
+        <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"
+               value="/wEPDwUKLTk3NDcwMzk5Nw9kFgICAw9kFhICAQ8WBB4JaW5uZXJodG1sBQbnu7/noIEeBXN0eWxlBQ9mb250LXNpemU6MjBweDtkAgMPFgIfAAUG5rGq5p2wZAIFDxYCHwAFDDIwMjAyNTIwMTA3MWQCBw8WAh8ABTblrabnlJ8vMzEzLeaVsOWtpuS4juiuoeeul+acuuenkeWtpuWtpumZoi/nlLXlrZDkv6Hmga9kAgkPFgIfAAU25Lq65ZGY57G75Yir77ya5a2m55SfICAyNDIt5YWo5pel5Yi25LiT5Lia5a2m5L2N56GV5aOrZAILDxYCHwAFG+i/lOagoeeKtuaAge+8muWFgeiuuOi/lOagoWQCDw8WAh8AZWQCEQ8WAh8ABacBPHAgY2xhc3M9J3NtamcnPuaJq+eggeaIkOWKnzwvcD48cCBjbGFzcz0nc21xayc+5oKo5b2T5YmN5omr56CB5pe26Ze077yaMjAyMS0wMy0wMyAwODoxNjo0NDwvcD48cCAgY2xhc3M9J3NtcWsnPuaCqOW9k+WJjeaJq+eggeS9jee9ru+8muagoeilv+WNl+mXqF/ov5vmoKHpgJrpgZNfMTwvcD5kAhMPFgIfAAUa56a75rWL6Led54K56Led56a777yaNznnsbNkZDDeajuhhR6OwcT2iDwbL3G8bbYmW19TxLIww69uC6a+"/>
+    </div>
+
+    <div>
+
+        <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="A9B280A3"/>
+    </div>
+    <div id="mingpian">
+        <div class="l_wd1" id="usertx">
+            <div class="w_ld1">
+                <p id="name" style="font-size:20px;">绿码</p>
+            </div>
+            <div class="w_dl2">
+                <p id="name_t" style="font-size: 16px;">{{s.name}}</p>
+                <p id="code" style="font-size: 13px;">{{ s.id }}</p>
+                <p id="department">学生/313-数学与计算机科学学院/电子信息</p>
+                <p id="typepersonnel">人员类别：学生 242-全日制专业学位硕士</p>
+                <p id="school">返校状态：允许返校</p>
+            </div>
+        </div>
+    </div>
+    <div class="divthere">
+        <div id="text"
+             style="color: #392a0c;font-size: 20px;line-height: 30px;text-align: center;padding-top: 15px;background: #fff;"></div>
+        <div id="txm" style="background:#fff;overflow: hidden;text-align:center">
+            <div style="text-align: center;font-size:16px;padding:10px 0">浙江师范大学返校码</div>
+            <div id="bcTarget" class="barcodeImg" style="margin: auto;"></div>
+        </div>
+    </div>
+    <div id="wxti"></div>
+    <div id="smsb">
+        <p class='smjg'>扫码成功</p>
+        <p class='smqk'></p>
+        <p class='smqk'>您当前扫码位置：校{{s.door}}_{{s.codeType}}通道_1</p>
+    </div>
+    <div id="jlfw"></div>
+</form>
+<script>
+    let code = String(Number($("#code").text()));
+    console.log(code)
+    $("#bcTarget").empty().barcode(code, "code128", {
+        barWidth: 2,
+        barHeight: 50,
+        showHRI: false
+    });
+
+
+    Date.prototype.Format = function (fmt) { //author: meizz
+        var o = {
+            "M+": this.getMonth() + 1, //月份
+            "d+": this.getDate(), //日
+            "H+": this.getHours(), //小时
+            "m+": this.getMinutes(), //分
+            "s+": this.getSeconds(), //秒
+            "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+            "S": this.getMilliseconds() //毫秒
+        };
+        if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        for (var k in o)
+            if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+        return fmt;
+    }
+
+    let now = new Date().Format("yyyy-MM-dd HH:mm:ss");
+    let timeNode = document.getElementsByClassName('smqk')[0];
+    timeNode.innerText = '您当前扫码时间：' + now;
+
+    let position = document.getElementById('jlfw');
+    let dist = Math.floor(Math.random() * (50 - 5)) + 5;
+    position.innerText = '离测距点距离：' + String(dist) + '米';
+
+</script>
 </body>
 </html>

@@ -40,7 +40,7 @@
 <section>
     <h1 style="text-align: center">Fake Qrcode</h1>
 
-    <form id="basic-form" method="post" action="submit">
+    <form id="basic-form" method="post" action="submit" onsubmit="return check(this)">
         <div class="form-group">
             <input type="text" id="basic-form-first-name" placeholder="学号" name="studentID">
             <label for="basic-form-first-name">学号</label>
@@ -62,6 +62,21 @@
         <div class="form-group">
             <button id="basic-form-submit" type="submit">提交</button>
         </div>
+        <script>
+            function check(myForm) {
+                if (myForm.studentID.value == "") {
+                    alert("没填学号");
+                    myForm.studentID.focus();
+                    return false;
+                }
+                if (myForm.studentName.value == "") {
+                    alert("没填姓名");
+                    myForm.studentName.focus();
+                    return false;
+                }
+                return true;
+            }
+        </script>
 
     </form>
 </section>
