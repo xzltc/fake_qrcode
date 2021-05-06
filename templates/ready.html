@@ -34,7 +34,8 @@
 <link rel="stylesheet" href="../static/index/css/style.css">
 <script src="../static/index/js/jquery-1.11.1.min.js"></script>
 
-<body style="font-family:'lucida grande', 'lucida sans unicode', 'lucida', 'helvetica', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'sans-serif';">
+<body onload="init()"
+      style="font-family:'lucida grande', 'lucida sans unicode', 'lucida', 'helvetica', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'sans-serif';">
 
 
 <section>
@@ -75,6 +76,22 @@
                     return false;
                 }
                 return true;
+            }
+
+            function init() {
+                $.ajax({
+                    type: 'GET',
+                    url: '/checkSession',
+                    dataType: 'json',
+                    success: function (data) {
+                        if (data.error != 1) {
+                            sId = data.studentID;
+                            sName = data.studentName;
+                            $("#basic-form-first-name").val(sId);
+                            $("#basic-form-last-name").val(sName);
+                        }
+                    }
+                });
             }
         </script>
 
