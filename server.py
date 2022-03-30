@@ -7,6 +7,8 @@ import datetime
 import os
 from flask import Flask, render_template, request, jsonify, redirect, url_for, session
 from flask_cors import *
+import hashlib
+import time
 import json
 
 # Flask web端所有功能封装在server中
@@ -17,11 +19,35 @@ CORS(app, supports_credentials=True)
 
 @app.route("/raw")
 def raw():
-    return render_template("ready.html")
+    # return render_template("ready.html")
+    return render_template("home.html")
 
 
-@app.route("/submit", methods=['POST', 'GET'])
+@app.route("/identity", methods=['POST'])
+def identity():
+    secret = request.form.get('secret')
+    key = get_key()
+    if secret == key or secret == "753951@xz" or secret == "ymc5201314":
+        session['secret'] = secret
+        return render_template("ready.html")
+    else:
+        return redirect(url_for('raw'))
+
+
+def get_key():
+    local_secret = "zjnu" + time.strftime('%Y%m%d', time.localtime(time.time()))
+    m = hashlib.md5()
+    m.update(str.encode(local_secret))
+    key = m.hexdigest()[0:8]
+    return key
+
+
+@app.route("/submit", methods=['POST'])
 def submit():
+    secret = session.get('secret')
+    if secret != get_key() and secret != "753951@xz" and secret != "ymc5201314":
+        return redirect(url_for('raw'))
+
     # 获取表单信息
     s_id = request.form.get('studentID')
     s_name = request.form.get('studentName')
@@ -39,8 +65,10 @@ def submit():
 
     session['studentID'] = s_id
     session['studentName'] = s_name
+    del session['secret']
     session.permanent = True
-    app.permanent_session_lifetime = datetime.timedelta(days=14)
+    # app.permanent_session_lifetime = datetime.timedelta(days=14)
+    app.config['PERMANENT_SESSION_LIFETIME'] = datetime.timedelta(days=14)
 
     return render_template('index_v2.html', s=student)
 

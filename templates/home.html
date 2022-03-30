@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Qrcode</title>
+    <style>
+        input {
+            text-align: center;
+            background: none;
+            outline: none;
+            border: none;
+        }
+
+        .box {
+            display: inline-block;
+            width: 90%;
+            height: 8vh;
+            border-radius: 19px;
+            background: #ebebeb;
+            box-shadow: inset 34px 34px 90px #dbdbdb,
+            inset -34px -34px 90px #fbfbfb;
+        }
+
+        .radio {
+            display: inline-block;
+        }
+
+    </style>
+</head>
+<link rel="stylesheet" href="../static/index/css/style.css">
+<script src="../static/index/js/jquery-1.11.1.min.js"></script>
+
+<body style="font-family:'lucida grande', 'lucida sans unicode', 'lucida', 'helvetica', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'sans-serif';">
+
+
+<section>
+
+    <form id="basic-form" method="post" action="identity" onsubmit="return check(this)">
+        <div class="form-group">
+            <input type="text" id="basic-form-first-name"  name="secret" style="padding: 18px 12px;height: 70px;font-size: 30px;">
+        </div>
+        <div class="form-group">
+            <button id="basic-form-submit" type="submit">confim</button>
+        </div>
+        <script>
+            function check(myForm) {
+                if (myForm.secret.value == "") {
+                    myForm.secret.focus();
+                    return false;
+                }
+                return true;
+            }
+
+        </script>
+
+    </form>
+</section>
+</body>
+</html>
