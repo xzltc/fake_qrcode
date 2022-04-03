@@ -27,7 +27,7 @@ def raw():
 def identity():
     secret = request.form.get('secret')
     key = get_key()
-    if secret == key or secret == "753951@xz" or secret == "ymc5201314":
+    if secret == key or secret == "753951@xz" or secret == "zy777" or secret == "ymc5201314":
         session['secret'] = secret
         return render_template("ready.html")
     else:
@@ -45,7 +45,7 @@ def get_key():
 @app.route("/submit", methods=['POST'])
 def submit():
     secret = session.get('secret')
-    if secret != get_key() and secret != "753951@xz" and secret != "ymc5201314":
+    if secret != get_key() and secret != "753951@xz" and secret != "zy777" and secret != "ymc5201314":
         return redirect(url_for('raw'))
 
     # 获取表单信息
@@ -70,7 +70,7 @@ def submit():
     # app.permanent_session_lifetime = datetime.timedelta(days=14)
     app.config['PERMANENT_SESSION_LIFETIME'] = datetime.timedelta(days=14)
 
-    return render_template('index_v2.html', s=student)
+    return render_template('index_v1.html', s=student)
 
 
 @app.route('/checkSession')
