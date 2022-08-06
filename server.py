@@ -45,7 +45,7 @@ def get_key():
 @app.route("/submit", methods=['POST'])
 def submit():
     secret = session.get('secret')
-    if secret != get_key() and secret != "753951@xz" and secret != "zy777" and secret != "ymc5201314":
+    if secret != get_key() and secret != "753951xz" and secret != "zy777" and secret != "ymc5201314":
         return redirect(url_for('raw'))
 
     # 获取表单信息
@@ -53,6 +53,7 @@ def submit():
     s_name = request.form.get('studentName')
     door = request.form.get('door')
     code_type = request.form.get('codeType')
+    reason = request.form.get('reason')
     time = datetime.datetime.now().strftime('%m-%d %H:%M')
     print(s_name, s_id, door)
     if s_id and s_name is not None:
@@ -61,7 +62,7 @@ def submit():
         filehandle.write('ID:{} -- Name: {} -- Door: {} T: {}\n'.format(s_id, s_name, door, time))
         filehandle.close()
     # 模板渲染
-    student = {'id': s_id, 'name': s_name, 'door': door, 'codeType': code_type}
+    student = {'id': s_id, 'name': s_name, 'door': door, 'codeType': code_type, 'reason': reason}
 
     session['studentID'] = s_id
     session['studentName'] = s_name
@@ -70,7 +71,7 @@ def submit():
     # app.permanent_session_lifetime = datetime.timedelta(days=14)
     app.config['PERMANENT_SESSION_LIFETIME'] = datetime.timedelta(days=14)
 
-    return render_template('index_v1.html', s=student)
+    return render_template('index_v3.html', s=student)
 
 
 @app.route('/checkSession')

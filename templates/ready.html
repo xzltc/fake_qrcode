@@ -29,6 +29,16 @@
             display: inline-block;
         }
 
+        .row {
+            display: flex;
+            justify-content: start;
+            width: 100%;
+        }
+
+        .row span {
+            margin-right: 25px;
+        }
+
     </style>
 </head>
 <link rel="stylesheet" href="../static/index/css/style.css">
@@ -51,16 +61,43 @@
             <label for="basic-form-last-name">姓名</label>
         </div>
         <div class="form-group" style="display:block;text-align: center">
-            <input class="radio" type="radio" name="door" value="西南门"/>
-            <span class="radio">西南门</span>
-            <input class="radio" type="radio" name="door" value="东南门" checked/>
-            <span class="radio">东南门</span>
-            <input class="radio" type="radio" name="door" value="北门"/>
-            <span class="radio">北门</span>
-            <input class="radio" type="radio" name="codeType" value="进校" checked/>
-            <span class="radio">进校</span>
-            <input class="radio" type="radio" name="codeType" value="出校"/>
-            <span class="radio">出校</span>
+            <div class="row">
+                <div>
+                    <input class="radio" type="radio" name="door" value="西南门"/>
+                    <span class="radio">西南门</span>
+                </div>
+
+                <div>
+                    <input class="radio" type="radio" name="door" value="东南门" checked/>
+                    <span class="radio">东南门</span>
+                </div>
+                <div>
+                    <input class="radio" type="radio" name="door" value="北门"/>
+                    <span class="radio">北门</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <input class="radio" type="radio" name="codeType" value="进校" checked/>
+                    <span class="radio">进校</span>
+                </div>
+                <div>
+                    <input class="radio" type="radio" name="codeType" value="出校"/>
+                    <span class="radio">出校</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <input class="radio" type="radio" name="reason" value="5-无" checked/>
+                    <span class="radio">5</span>
+                </div>
+                <div>
+                    <input class="radio" type="radio" name="reason" value="1-请假"/>
+                    <span class="radio">1</span>
+                </div>
+            </div>
         </div>
         <div class="form-group">
             <button id="basic-form-submit" type="submit">提交</button>
