@@ -163,12 +163,32 @@
             </div>
         </div>
     </div>
+    <table style="margin: 5px; width: 100%; height: 65px">
+        <tbody>
+        <tr>
+            <td id="td_hsbg" rowspan="2"
+                style="font-family:微软雅黑;text-align:center;width:65px;vertical-align:middle;font-weight:bold;height:65px;color:#FFFFFF;background-color:#6EAA74;font-size:25px;">
+                <div id="div_hsbg" style=" ">阴性</div>
+            </td>
+
+            <td style="padding-left: 15px;">
+                <div id="div_timeSpan"><b>7</b> 天内</div>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding-left: 15px">
+                <div id="div_BGDate">
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
     <p id="p_date"
        style="font-family: 黑体; font-size: 30px;color: #392a0c;line-height: 30px;text-align: center;background: #fff; padding-top: 10px;"></p>
     <p id="p_time"
        style="font-family: 黑体; font-size: 35px;color: #392a0c;line-height: 30px;text-align: center;padding-top: 5px;background: #fff;"></p>
     <div class="divthere">
-       <div id="text"
+        <div id="text"
              style="color: #392a0c;font-size: 20px;line-height: 30px;text-align: center;padding-top: 0px;background: #fff;"></div>
         <div id="txm" style="background:#fff;overflow: hidden;text-align:center">
             <div style="text-align: center;font-size:16px;padding:10px 0">浙江师范大学返校码</div>
@@ -219,6 +239,10 @@
     let position = document.getElementById('jlfw');
     let dist = Math.floor(Math.random() * (50 - 5)) + 5;
     position.innerText = '离测距点距离：' + String(dist) + '米';
+
+    let BGDate = document.getElementById('div_BGDate');
+    let BGTime = new Date(new Date() - 24 * 60 * 60 * 1000).Format("yyyy-MM-dd") + ' 05:28:30';
+    BGDate.innerText = '报告时间：' + BGTime
 
 
     let codeType = '{{s.codeType}}'
